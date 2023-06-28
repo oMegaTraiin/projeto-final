@@ -9,6 +9,10 @@
     background-color: #212529;
 }
 
+ul{
+    list-style-type: none;
+}
+
 .secondary-color{
     background-color: #2b3035;
 }
@@ -69,5 +73,34 @@
 
 .card-img{
     height: 290px;
-    width: 290px;
+}
+
+.img-fluid{
+    height: 290px;
+}
+
+.promotions{
+    padding: 25px 0 25px;
+}
+
+.more-procuradas{
+    padding: 25px 0 25px;
+}
+
+.top-align{
+    margin-top: 32%;
+}
+
+.top-align-promo{
+    margin-top: 32%;
+}
+
+@media screen and (max-width: 767px) {
+    .top-align {
+        margin-top: 18%;
+    }
+    .top-align-promo {
+        margin-top: 5%;
+        margin-bottom: 8%;
+    }
 }
