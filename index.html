@@ -4,18 +4,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Compre suas passagens com a santana Turismo</title>
+    <link rel="icon" type="image/x-icon" href="./imagens/logo.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <script>
+        function formatarData(event) {
+            const input = event.target;
+            let data = input.value.replace(/\D/g, ''); // Remove todos os caracteres não numéricos
+
+            if (data.length > 8) {
+                data = data.substring(0, 8);
+            }
+
+            if (data.length > 4) {
+                data = data.substring(0, 2) + '/' + data.substring(2, 4) + '/' + data.substring(4, 8);
+            } else if (data.length > 2) {
+                data = data.substring(0, 2) + '/' + data.substring(2, 4);
+            }
+
+            input.value = data;
+        }
+        function alternarCidades() {
+            const input1 = document.getElementById('origem');
+            const input2 = document.getElementById('destino');
+
+            const tempValue = input1.value;
+            input1.value = input2.value;
+            input2.value = tempValue;
+        }
+        function alternarDatas() {
+            const input1 = document.getElementById('ida');
+            const input2 = document.getElementById('volta');
+
+            const tempValue = input1.value;
+            input1.value = input2.value;
+            input2.value = tempValue;
+        }
+    </script>
 </head>
 
 <body>
     <header class="header">
-        <nav class="navbar navbar-expand-lg navbar-bg" data-bs-theme="dark">
+        <nav class="navbar navbar-expand-lg navbar-bg mb-5" data-bs-theme="dark">
             <div class="container">
-                <a class="navbar-brand" href="#">
-                    <div class="empress-logo"><img src="imagens/logo.png"></div>
+                <a class="navbar-brand" href="./index.html">
+                    <div class="empress-logo"><img src="./imagens/logo.png"></div>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -23,47 +58,53 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="justify-content-end collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav">
+                    <ul class="navbar-nav align-items-lg-center">
                         <li class="nav-item dropdown">
-                            <a class="nav-link primary-font-color dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                Ajuda e horários
+                            <a class="nav-link primary-font-color dropdown-toggle" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Ajuda e <br>horários
                             </a>
-                            <ul class="dropdown-menu">
+                            <ul class="dropdown-menu" data-bs-theme="light">
                                 <li>
-                                    <h1 class="dropdown-item text-bold">Ajuda</h1>
-                                    <p class="dropdown-item">Consulte as perguntas frequentes<br>e os horários de guichês</p>
+                                    <h1 class="dropdown-item text-bold font-color-blue">AJUDA</h1>
+                                    <p class="dropdown-item">Consulte as perguntas frequentes<br>e os horários de
+                                        guichês</p>
                                 </li>
-                                <li><hr class="dropdown-divider"></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
                                 <li><a class="dropdown-item" href="#">Perguntas Frenquentes</a></li>
                                 <li><a class="dropdown-item" href="#">Horários de guichês</a></li>
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link primary-font-color" aria-current="page" href="#">Nossos destinos</a>
+                            <a class="nav-link primary-font-color text-lg-end" aria-current="page"
+                                href="#">Nossos<br>destinos</a>
                         </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link primary-font-color dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
+                        <li class="nav-item dropdown" data-bs-theme="light">
+                            <a class="nav-link primary-font-color dropdown-toggle" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
                                 Meus pedidos
                             </a>
                             <ul class="dropdown-menu">
                                 <li>
-                                    <h1 class="dropdown-item text-bold">Meus Pedidos</h1>
+                                    <h1 class="dropdown-item text-bold font-color-blue">MEUS PEDIDOS</h1>
                                     <p class="dropdown-item">Consultar historico, remarcar<br>ou cancelar pedidos</p>
                                 </li>
-                                <li><hr class="dropdown-divider"></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
                                 <li><a class="dropdown-item" href="#">Buscar bilhete</a></li>
                             </ul>
                         </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link primary-font-color dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
+                        <li class="nav-item dropdown" data-bs-theme="light">
+                            <a class="nav-link primary-font-color dropdown-toggle" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
                                 Entrar na sua conta
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Logar-se</a></li>
-                                <li><a class="dropdown-item" href="#">Registrar-se</a></li>
+                                <li><a class="dropdown-item" href="./login.html">Logar-se</a></li>
+                                <li><a class="dropdown-item" href="./cadastro.html">Registrar-se</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -72,18 +113,80 @@
         </nav>
     </header>
 
-    <main class="main secondary-color">
+    <span class="d-flex fixed-bottom justify-content-end">
+        <div class="whatsapp d-flex justify-content-center align-items-center">
+            <img class="" src="./imagens/whatsapp.png" alt="">
+        </div>
+    </span>
 
+    <main class="main">
+        <section class="container margin-top">
+            <div class="card primary-color">
+                <div class="container">
+                    <div class="row justify-content-center align-items-center">
+                        <div class="d-flex col-12 margin-top">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1"
+                                    value="option1" checked>
+                                <label class="primary-font-color form-check-label" for="exampleRadios1">
+                                    Ida e Volta
+                                </label>
+                            </div>
+                            <div class="form-check label-dentro">
+                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2"
+                                    value="option2">
+                                <label class="primary-font-color form-check-label" for="exampleRadios2">
+                                    Apenas Ida
+                                </label>
+                            </div>
+                        </div>
+                        <div class="d-flex col-sm-12 col-md-12 col-lg-6 mb-2">
+                            <div class="form-floating w-100">
+                                <input id="origem" type="text" class="form-control" placeholder="Origem" id="floatingTextarea"></input>
+                                <label class="text-line font-color-gray" for="floatingTextarea">Origem</label>
+                            </div>
+                            <button class="btn" onclick="alternarCidades()"><img src="./imagens/arrows.png" style="height: 16px;"></button>
+                            <div class="form-floating w-100">
+                                <input id="destino" type="text" class="form-control" placeholder="Destino" id="floatingTextarea"></input>
+                                <label class="text-line font-color-gray" for="floatingTextarea">Destino</label>
+                            </div>
+                        </div>
+                        <div class="d-flex col-sm-12 col-md-12 col-lg-4 mb-2">
+                            <div class="form-floating w-100">
+                                <input id="ida" type="tel" class="form-control" placeholder="Ida" id="floatingTextarea"
+                                    oninput="formatarData(event)"></textarea>
+                                <label class="text-line font-color-gray" for="floatingTextarea">Ida</label>
+                            </div>
+                            <button class="btn" onclick="alternarDatas()"><img src="./imagens/arrows.png" style="height: 16px;"></button>
+                            <div class="form-floating w-100">
+                                <input id="volta" type="tel" class="form-control" placeholder="Volta" id="floatingTextarea"
+                                    oninput="formatarData(event)"></textarea>
+                                <label class="text-line font-color-gray" for="floatingTextarea">Volta</label>
+                            </div>
+                        </div>
+                        <div class="mb-2 text-center col-sm-12 col-md-12 col-lg-2">
+                            <button class="text-bold btn btn-danger w-100" type="submit">BUSCAR</button>
+                        </div>
+                        <div class="form-check form-switch primary-font-color switch-padding">
+                            <input class="form-check-input switch-padding" type="checkbox" role="switch"
+                                id="flexSwitchCheckDefault">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Buscar pela data mais
+                                barata</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
         <section class="container promotions">
             <ul class="text-center">
                 <li><button class="text-bold btn btn-primary" type="submit">PROMOÇÕES SEMANAIS</button></li>
             </ul>
-            <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+            <div id="carouselExampleAutoplaying" class="carousel carousel-dark slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <!-- Primeiro -->
                         <div class="row text-center align-items-center justify-content-center">
-                            <div class="card mb-3 text-bg-dark" style="max-width: 540px;">
+                            <div class="card mb-3 text-bg-light" style="max-width: 540px;">
                                 <div class="row g-0">
                                     <div class="col-md-6">
                                         <img src="./imagens/citys/goiania.jpg" class="card-img rounded-start">
@@ -93,20 +196,20 @@
                                             <div class="top-align-promo">
                                                 <div class="card-title text-bold">GOIANIA</div>
                                                 <div class="card-title text-bold">R$ 49,90</div>
-                                                <a href="#" class="btn btn-outline-light">VER MAIS</a>
+                                                <a href="#" class="btn btn-outline-primary">VER MAIS</a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="card mb-3 text-bg-dark" style="max-width: 540px;">
+                            <div class="card mb-3 text-bg-light" style="max-width: 540px;">
                                 <div class="row g-0">
                                     <div class="col-md-6">
                                         <div class="card-body">
                                             <div class="top-align-promo">
                                                 <div class="card-title text-bold">CALDAS NOVAS</div>
                                                 <div class="card-title text-bold">R$ 79,90</div>
-                                                <a href="#" class="btn btn-outline-light">VER MAIS</a>
+                                                <a href="#" class="btn btn-outline-primary">VER MAIS</a>
                                             </div>
                                         </div>
                                     </div>
@@ -120,7 +223,7 @@
                     <!-- Segundo -->
                     <div class="carousel-item">
                         <div class="row text-center align-items-center justify-content-center">
-                            <div class="card mb-3 text-bg-dark" style="max-width: 540px;">
+                            <div class="card mb-3 text-bg-light" style="max-width: 540px;">
                                 <div class="row g-0">
                                     <div class="col-md-6">
                                         <img src="./imagens/citys/caldas_novas.jpg" class="card-img rounded-start">
@@ -130,20 +233,20 @@
                                             <div class="top-align-promo">
                                                 <div class="card-title text-bold">CALDAS NOVAS</div>
                                                 <div class="card-title text-bold">R$ 79,90</div>
-                                                <a href="#" class="btn btn-outline-light">VER MAIS</a>
+                                                <a href="#" class="btn btn-outline-primary">VER MAIS</a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="card mb-3 text-bg-dark" style="max-width: 540px;">
+                            <div class="card mb-3 text-bg-light" style="max-width: 540px;">
                                 <div class="row g-0">
                                     <div class="col-md-6">
                                         <div class="card-body">
                                             <div class="top-align-promo">
                                                 <div class="card-title text-bold">JOAO PESSOA</div>
                                                 <div class="card-title text-bold">R$ 429,90</div>
-                                                <a href="#" class="btn btn-outline-light">VER MAIS</a>
+                                                <a href="#" class="btn btn-outline-primary">VER MAIS</a>
                                             </div>
                                         </div>
                                     </div>
@@ -157,7 +260,7 @@
                     <!-- Terceiro -->
                     <div class="carousel-item">
                         <div class="row text-center align-items-center justify-content-center">
-                            <div class="card mb-3 text-bg-dark" style="max-width: 540px;">
+                            <div class="card mb-3 text-bg-light" style="max-width: 540px;">
                                 <div class="row g-0">
                                     <div class="col-md-6">
                                         <img src="./imagens/citys/joao_pessoa.jpg" class="card-img rounded-start">
@@ -167,20 +270,20 @@
                                             <div class="top-align-promo">
                                                 <div class="card-title text-bold">JOAO PESSOA</div>
                                                 <div class="card-title text-bold">R$ 429,90</div>
-                                                <a href="#" class="btn btn-outline-light">VER MAIS</a>
+                                                <a href="#" class="btn btn-outline-primary">VER MAIS</a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="card mb-3 text-bg-dark" style="max-width: 540px;">
+                            <div class="card mb-3 text-bg-light" style="max-width: 540px;">
                                 <div class="row g-0">
                                     <div class="col-md-6">
                                         <div class="card-body">
                                             <div class="top-align-promo">
                                                 <div class="card-title text-bold">NATAL</div>
                                                 <div class="card-title text-bold">R$ 429,90</div>
-                                                <a href="#" class="btn btn-outline-light">VER MAIS</a>
+                                                <a href="#" class="btn btn-outline-primary">VER MAIS</a>
                                             </div>
                                         </div>
                                     </div>
@@ -194,7 +297,7 @@
                     <!-- Quarto -->
                     <div class="carousel-item">
                         <div class="row text-center align-items-center justify-content-center">
-                            <div class="card mb-3 text-bg-dark" style="max-width: 540px;">
+                            <div class="card mb-3 text-bg-light" style="max-width: 540px;">
                                 <div class="row g-0">
                                     <div class="col-md-6">
                                         <img src="./imagens/citys/natal.jpg" class="card-img rounded-start">
@@ -204,20 +307,20 @@
                                             <div class="top-align-promo">
                                                 <div class="card-title text-bold">NATAL</div>
                                                 <div class="card-title text-bold">R$ 429,90</div>
-                                                <a href="#" class="btn btn-outline-light">VER MAIS</a>
+                                                <a href="#" class="btn btn-outline-primary">VER MAIS</a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="card mb-3 text-bg-dark" style="max-width: 540px;">
+                            <div class="card mb-3 text-bg-light" style="max-width: 540px;">
                                 <div class="row g-0">
                                     <div class="col-md-6">
                                         <div class="card-body">
                                             <div class="top-align-promo">
                                                 <div class="card-title text-bold">GOIANIA</div>
                                                 <div class="card-title text-bold">R$ 49,90</div>
-                                                <a href="#" class="btn btn-outline-light">VER MAIS</a>
+                                                <a href="#" class="btn btn-outline-primary">VER MAIS</a>
                                             </div>
                                         </div>
                                     </div>
@@ -243,93 +346,97 @@
         </section>
 
         <ul class="text-center">
-            <li><button class="text-bold btn btn-primary" type="submit">PROMOÇÕES SEMANAIS</button></li>
+            <li><button class="text-bold btn btn-primary" type="submit">VIAGENS MAIS PROCURADAS</button></li>
         </ul>
 
         <section class="container more-procuradas">
             <div class="row g-2 text-center justify-content-center align-items-center">
-                <div class="card text-bg-dark col-lg-3 col-md-4 col-sm-12">
+                <div class="card text-bg-light col-lg-3 col-md-4 col-sm-12">
                     <img src="./imagens/citys/sao_paulo.jpg" class="card-img">
                     <div class="card-img-overlay">
                         <div class="top-align">
-                            <div class="card-title text-bold">RIO DE JANEIRO</div>
-                            <div class="card-title text-bold">R$ 349,90</div>
+                            <div class="card-title primary-font-color text-bold">SÃO PAULO</div>
+                            <div class="card-title primary-font-color text-bold">R$ 479,90</div>
                             <a href="#" class="btn btn-outline-light">VER MAIS</a>
                         </div>
                     </div>
                 </div>
-                <div class="card text-bg-dark col-lg-3 col-md-4 col-sm-12">
+                <div class="card text-bg-light col-lg-3 col-md-4 col-sm-12">
                     <img src="./imagens/citys/rio.jpg" class="card-img">
                     <div class="card-img-overlay">
                         <div class="top-align">
-                            <div class="card-title text-bold">RIO DE JANEIRO</div>
-                            <div class="card-title text-bold">R$ 349,90</div>
+                            <div class="card-title primary-font-color text-bold">RIO DE JANEIRO</div>
+                            <div class="card-title primary-font-color text-bold">R$ 479,90</div>
                             <a href="#" class="btn btn-outline-light">VER MAIS</a>
                         </div>
                     </div>
                 </div>
-                <div class="card text-bg-dark col-lg-3 col-md-4 col-sm-12">
+                <div class="card text-bg-light col-lg-3 col-md-4 col-sm-12">
                     <img src="./imagens/citys/fortaleza.jpg" class="card-img">
                     <div class="card-img-overlay">
                         <div class="top-align">
-                            <div class="card-title text-bold">RIO DE JANEIRO</div>
-                            <div class="card-title text-bold">R$ 349,90</div>
+                            <div class="card-title primary-font-color text-bold">FORTALEZA</div>
+                            <div class="card-title primary-font-color text-bold">R$ 379,90</div>
                             <a href="#" class="btn btn-outline-light">VER MAIS</a>
                         </div>
                     </div>
                 </div>
-                <div class="card text-bg-dark col-lg-3 col-md-4 col-sm-12">
+                <div class="card text-bg-light col-lg-3 col-md-4 col-sm-12">
                     <img src="./imagens/citys/recife.jpg" class="card-img">
                     <div class="card-img-overlay">
                         <div class="top-align">
-                            <div class="card-title text-bold">RIO DE JANEIRO</div>
-                            <div class="card-title text-bold">R$ 349,90</div>
+                            <div class="card-title primary-font-color text-bold">RECIFE</div>
+                            <div class="card-title primary-font-color text-bold">R$ 379,90</div>
                             <a href="#" class="btn btn-outline-light">VER MAIS</a>
                         </div>
                     </div>
                 </div>
-                <div class="card text-bg-dark col-lg-3 col-md-4 col-sm-12">
+                <div class="card text-bg-light col-lg-3 col-md-4 col-sm-12">
                     <img src="./imagens/citys/belo_horizonte.jpg" class="card-img">
                     <div class="card-img-overlay">
                         <div class="top-align">
-                            <div class="card-title text-bold">RIO DE JANEIRO</div>
-                            <div class="card-title text-bold">R$ 349,90</div>
+                            <div class="card-title primary-font-color text-bold">BELO HORIZONTE</div>
+                            <div class="card-title primary-font-color text-bold">R$ 349,90</div>
                             <a href="#" class="btn btn-outline-light">VER MAIS</a>
                         </div>
                     </div>
                 </div>
-                <div class="card text-bg-dark col-lg-3 col-md-4 col-sm-12">
+                <div class="card text-bg-light col-lg-3 col-md-4 col-sm-12">
                     <img src="./imagens/citys/caldas_novas.jpg" class="card-img">
                     <div class="card-img-overlay">
                         <div class="top-align">
-                            <div class="card-title text-bold">RIO DE JANEIRO</div>
-                            <div class="card-title text-bold">R$ 349,90</div>
+                            <div class="card-title primary-font-color text-bold">RIO DE JANEIRO</div>
+                            <div class="card-title primary-font-color text-bold">R$ 129,90</div>
                             <a href="#" class="btn btn-outline-light">VER MAIS</a>
                         </div>
                     </div>
                 </div>
-                <div class="card text-bg-dark col-lg-3 col-md-4 col-sm-12">
+                <div class="card text-bg-light col-lg-3 col-md-4 col-sm-12">
                     <img src="./imagens/citys/salvador.jpg" class="card-img">
                     <div class="card-img-overlay">
                         <div class="top-align">
-                            <div class="card-title text-bold">RIO DE JANEIRO</div>
-                            <div class="card-title text-bold">R$ 349,90</div>
+                            <div class="card-title primary-font-color text-bold">SALVADOR</div>
+                            <div class="card-title primary-font-color text-bold">R$ 349,90</div>
                             <a href="#" class="btn btn-outline-light">VER MAIS</a>
                         </div>
                     </div>
                 </div>
-                <div class="card text-bg-dark col-lg-3 col-md-4 col-sm-12">
+                <div class="card text-bg-light col-lg-3 col-md-4 col-sm-12">
                     <img src="./imagens/citys/maceio.jpg" class="card-img">
                     <div class="card-img-overlay">
                         <div class="top-align">
-                            <div class="card-title text-bold">RIO DE JANEIRO</div>
-                            <div class="card-title text-bold">R$ 349,90</div>
+                            <div class="card-title primary-font-color text-bold">MACEIO</div>
+                            <div class="card-title primary-font-color text-bold">R$ 379,90</div>
                             <a href="#" class="btn btn-outline-light">VER MAIS</a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+
+        <ul class="text-center">
+            <li><button class="text-bold btn btn-primary" type="submit">VER TODOS OS DESTINOS</button></li>
+        </ul>
     </main>
 
     <footer class="footer">
@@ -342,8 +449,10 @@
                     <div class="col-lg-7 col-md-7 col-sm-12"></div>
                     <div class="footer-social text-bold primary-font-color text-lg-end text-md-end col-lg-4 col-md-4">
                         Nossas Redes Sociais
-                        <a href="#"><img class="footer-facebook" src="./imagens/facebook.png"></a>
-                        <a href="#"><img class="footer-instagram" src="./imagens/instagram.png"></a>
+                        <a href="https://www.facebook.com/SantanaTurismoViagens/?locale=pt_BR"><img
+                                class="footer-facebook" src="./imagens/facebook.png"></a>
+                        <a href="https://www.instagram.com/santanaturismo_oficial/"><img class="footer-instagram"
+                                src="./imagens/instagram.png"></a>
                     </div>
                 </div>
             </section>
@@ -351,28 +460,30 @@
         <section class="secondary-color">
             <section class="container text-center">
                 <div class="row align-items-center">
-                    <div class="footer-instituto col-lg-2 col-md-2 col-sm-12">
+                    <div class="footer-instituto col-8 col-lg-8 col-md-8 col-sm-12">
                         <ul class="primary-font-color text-lg-start text-md-start">
                             <h1 class="text-bold text-uppercase">Institucional</h1>
-                            <li class="text-light">Politica de Privacidade</li>
-                            <li class="text-light">Termos de Uso</li>
-                            <li class="text-light">Sobre Nós</li>
-                            <li class="text-light">Trabalhe conosco</li>
+                            <li><a class="text-line primary-font-color" href="./privacidade.html">Politica de Privacidade</a></li>
+                            <li><a class="text-line primary-font-color" href="./termos.html">Termos de Uso</a></li>
+                            <li><a class="text-line primary-font-color" href="./sobre.html">Sobre Nós</a></li>
+                            <li><a class="text-line primary-font-color" href="#">Trabalhe conosco</a></li>
                         </ul>
                     </div>
-                    <div class="col-lg-6 col-md-6 col-sm-12"></div>
-                    <div class="footer-telefone col-lg-4 col-md-4 col-sm-12">
+                    <div class="footer-telefone col-4 col-lg-4 col-md-4 col-sm-12">
                         <ul>
                             <h1 class="primary-font-color text-bold text-lg-start text-md-start text-uppercase">Entre em
                                 contato</h1>
-                            <li class="footer-telefone-bg primary-font-color text-center">
-                                (11) 1111 1111
+                            <li class="footer-telefone-bg secondary-font-color text-center mb-2">
+                                <img src="./imagens/telefone.png"> (11) 1111 1111
                             </li>
                             <h1 class="primary-font-color text-bold text-lg-start text-md-start text-uppercase">
                                 atendimento pelo whatsapp</h1>
-                            <li class="footer-telefone-bg primary-font-color text-center">
-                                (11) 9 1111 1111
+                            <li class="footer-telefone-bg secondary-font-color text-center mb-3">
+                                <img src="./imagens/whatsapp-dark.png"> (11) 9 1111 1111
                             </li>
+                            <p class="text-lg-start text-md-start align-items-center text-line primary-font-color"><img
+                                    src="./imagens/whatsapp.png"> (11) 9 1111 1111 para deficientes de fala e
+                                auditivos.<br>faleconosco@santanatur.com.br</p>
                         </ul>
                     </div>
                 </div>
@@ -382,21 +493,25 @@
                     <div class="footer-ajuda col-lg-2 col-md-4 col-sm-12">
                         <ul class="primary-font-color text-lg-start text-md-start">
                             <h1 class="text-bold text-uppercase">Ajuda</h1>
-                            <li class="text-light">Perguntas frequentes</li>
-                            <li class="text-light">Horários e guichês</li>
+                            <li><a class="text-line primary-font-color" href="./faq.html">Perguntas frequentes</a></li>
+                            <li><a class="text-line primary-font-color" href="#">Horários e guichês</a></li>
                         </ul>
                     </div>
                     <div class="footer-acessos col-lg-2 col-md-4 col-sm-12">
                         <ul class="primary-font-color text-lg-start text-md-start">
-                            <h1 class="text-bold text-uppercase">Acesso Rapido</h1>
-                            <li class="text-light">Perguntas frequentes</li>
-                            <li class="text-light">Horários e guichês</li>
+                            <h1 class="text-bold text-uppercase">áreas de acesso</a></h1>
+                            <li><a class="text-line primary-font-color" href="#">Colaborador</a></li>
+                            <li><a class="text-line primary-font-color" href="#">Motorista</a></li>
                         </ul>
                     </div>
                     <div class="footer-pagamentos col-lg-8 col-md-4 col-sm-12">
                         <ul class="primary-font-color text-lg-end text-md-end">
                             <h1 class="text-bold text-uppercase">Meios de Pagamento</h1>
-                            <li><img src="./imagens/mastercard.png"> <img src="./imagens/visa.png"></li>
+                            <li>
+                                <img src="./imagens/mastercard.png">
+                                <img src="./imagens/visa.png">
+                                <img src="./imagens/american.png">
+                            </li>
                         </ul>
                     </div>
                 </div>
