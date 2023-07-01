@@ -1,20 +1,48 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap');
 
+body{
+    background-color: #ebebeb;
+}
+
 .navbar-bg{
-    background-color: #212529;
+    background-color: #007aff;
+    box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.25);
 }
 
 .primary-color{
-    background-color: #212529;
+    background-color: #007aff;
+}
+
+.secondary-color{
+    background-color: #1e90ff;
 }
 
 ul{
     list-style-type: none;
 }
 
-.secondary-color{
-    background-color: #2b3035;
+.nav-link:hover{
+    color: #cccccc;
+}
+
+.gray-color{
+    background-color: #ebebeb;
+}
+
+.font-color-blue{
+    color: #007aff;
+}
+
+.font-color-light-gray{
+    color: #cccccc;
+}
+
+.font-color-gray{
+    color: #888888;
+}
+
+.font-color-dark-gray{
+    color:  #656565;
 }
 
 .primary-font-color{
@@ -22,7 +50,7 @@ ul{
 }
 
 .secondary-font-color{
-    color: #cccccc;
+    color: #333333;
 }
 
 .empress-logo img{
@@ -43,10 +71,15 @@ ul{
 }
 
 .footer-telefone-bg{
-    background-color: #41464b;
+    background-color: #ebebeb;
     border: none;
     border-radius: 5px;
     padding: 10px;
+}
+
+.footer-telefone img{
+    height: 20px;
+    width: 20px;
 }
 
 .footer ul{
@@ -55,16 +88,36 @@ ul{
     margin: 25px 0 25px;
 }
 
-.text-bold{
+.text-title{
     font-family: 'Source Sans Pro';
-    font-size: 17px;
+    font-size: 34px;
     font-weight: 700;
+    text-decoration: none;
 }
 
-.text-light{
+.text-subtitle{
+    font-family: 'Source Sans Pro';
+    font-size: 25px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.text-bold{
+    font-family: 'Source Sans Pro';
+    font-size: 19px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.text-line{
     font-family: 'Source Sans Pro';
     font-size: 16px;
     font-weight: 500;
+    text-decoration: none;
+}
+
+.text-uppercase{
+    text-transform: uppercase;
 }
 
 .collapse {
@@ -93,6 +146,43 @@ ul{
 
 .top-align-promo{
     margin-top: 32%;
+}
+
+.card-busca{
+    padding: 20px 0 20px;
+}
+
+.margin-top{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.margin-dentro{
+    padding: 10px 10px 10px;
+    margin: 10px 10px 10px;
+}
+
+.label-dentro{
+    margin-left: 10px;
+}
+
+.switch-padding{
+    margin-left: 24px;
+}
+
+.whatsapp img{
+    height: 20px;
+    width: 20px;
+}
+
+.whatsapp{
+    background-color: #00ff00;
+    border: none;
+    border-radius: 100%;
+    height: 45px;
+    width: 45px;
+    margin-bottom: 20px;
+    margin-right: 20px;
 }
 
 @media screen and (max-width: 767px) {
